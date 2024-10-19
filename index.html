@@ -21,6 +21,7 @@
         <a href="#services">Services</a>
         <a href="#founders">Founders</a>
         <a href="#contact">Contact</a>
+        <a href="privacyPolicy.html">Privacy Policy</a>
     </nav>
 </header>
 
@@ -169,6 +170,10 @@
         <li>
             <a href="#contact">Contact</a>
         </li>
+
+        <li>
+            <a href="privacyPolicy.html">Privacy Policy</a>
+        </li>
     </ul>
 
     <p class="copyright">
@@ -176,6 +181,12 @@
     </p>
 </footer>
 
+<script>
+    document.getElementById('kvkkLink').addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'privacyPolicy.html';
+    });
+</script>
 
 <script src="MoonLight/js/app.js"></script>
 
@@ -224,18 +235,22 @@
 </script>
 <script type="text/javascript">
     document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Formun normal gönderimini engeller
+        event.preventDefault();
 
-        emailjs.sendForm('service_krics8t', 'template_aucdsh2', this)
-            .then(function() {
-                alert('Your message has been sent successfully!');
-            }, function(error) {
-                alert('Failed to send message. Please try again later.');
-                console.log('Error: ', error);
-            });
-    });
+var templateParams = {
+    to_name: 'xyz',
+    from_name: 'abc',
+    message_html: 'Please Find out the attached file'
+  };
+
+  emailjs.sendForm('service_krics8t', 'template_fvq4qb8', this)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+      console.log('FAILED...', error);
+  });
+
+
 </script>
-
-
 </body>
 </html>
