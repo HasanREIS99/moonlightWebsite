@@ -204,6 +204,7 @@
         .then(function(response) {
           console.log('Email sent!', response.status, response.text);
           alert('Email sent successfully!');
+          document.getElementById('contact-form').reset();
         }, function(error) {
           console.error('Error sending email:', error);
           alert('Oops! Something went wrong.');
